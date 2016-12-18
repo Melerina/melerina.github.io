@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>MMP-Video Aufgabe 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href="../mmp2016-BonguiHortz-Übung1/assets/styles.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="js/processor.js"></script>
+        <script type="text/javascript" src="js/processor2.js"></script>
+        <style>
+            #c2_2
+            {
+                /* canvas 2 background image */
+                background-image: url(../mmp2016-BonguiHortz-Übung1/assets/wolke2_96.png);
+                background-size: 360px 200px;
+                background-repeat: no-repeat;
+            }
+            #c3_2
+            {
+                /*  canvas 3 background image */
+                background-image: url(../mmp2016-BonguiHortz-Übung1/assets/berlin2.png);
+                background-size: 360px 200px;
+                background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div>Melina Hortz & Wassim Bongui</div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                        <li class="hidden active">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#graphics">Helligkeit und Filter</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#websites">Chromakey</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        <div class="scroll_up">
+            <a href="#" class="scrollToTop"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+        </div>
+        <div class="section_1" id="banner">
+            <section class="header fixed-header parallax">
+                <div class="background-image-holder">
+                    <img alt="Background Image" src="../mmp2016-BonguiHortz-Übung1/assets/mmp_banner.jpg">
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <div class="row" style="padding-top: 75px;">
+                <div class="col-md-12 col-sm-12 text-center">
+                    <a><span class="glyphicon glyphicon-chevron-down page_down" style="font-size: 42px; color:darkgrey"></span></a>
+                </div>
+            </div>
+        </div>
+
+        <section class="section_2" id="graphics">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <h1>Helligkeit und Filter</h1>
+                        <h4>Aufgabe 1 und 2</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="padding-top: 80px;">
+                        <div>
+                            <video id="video" width="320" height="320" tabindex="0" controls muted onloadedmetadata="processor.doLoad()">
+                                <source src="../mmp2016-BonguiHortz-Übung1/assets/TV-100s-2110.podm.h264.webm" type="video/webm" />
+                                <source src="../mmp2016-BonguiHortz-Übung1/assets/TV-100s-2110.podm.h264.mp4" type="video/mp4" />
+                                No HTML5-Video support? Try a newer browser! (Opera11, IE9, Firefox4, Safari5)
+                            </video>
+                            <canvas id="c1" style="width:320px; height:320px"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="padding-top: 80px;">
+                        <div>
+                            Brightness: <input id="color_offset" type="range"  min="-100" max="100" onchange="processor.change_color_offset()"/>
+                        </div>
+                        <div>
+                            Rot Offset: <input id="red_offset" type="range"  min="-100" max="100" onchange="processor.change_red_offset()"/>
+                        </div>
+                        <div>
+                            Grün Offset: <input id="green_offset" type="range"  min="-100" max="100" onchange="processor.change_green_offset()"/>
+                        </div>
+                        <div>
+                            Blau Offset: <input id="blue_offset" type="range"  min="-100" max="100" onchange="processor.change_blue_offset()"/>
+                        </div>
+                        <div>
+                            <h3>Bildfilter:</h3> 
+                            <ul>
+                                <li style="display:inline"> 
+                                    <label>
+                                        <input id="sw_filter" type="checkbox" name="filter" value="sw" onchange="processor.set_sw_filter()"/>
+                                        S/W
+                                    </label>
+                                </li>
+                                <li style="display:inline"> 
+                                    <label>
+                                        <input id="sepia_filter" type="checkbox" name="filter" value="sepia" onchange="processor.set_sepia_filter()"/>
+                                        Sepia
+                                    </label>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <a href="#" onclick="startCam()">Start Camera</a>
+                <script type="text/javascript" src="js/camera.js"></script>
+                <div id="log">
+                </div>
+            </div>
+        </section>
+
+        <section class="section_3" id="websites" style="background-color: white; color:#003399">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <h1>Chromakey</h1>
+                        <h4>Aufgabe 3</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- video container - run javascript doLoad() when ready -->
+                        <video id="video2" muted controls onloadedmetadata="processor2.doLoad()">
+
+                            <!-- webm file for firefox, chrome -->
+                            <source id="src1" src="../mmp2016-BonguiHortz-Übung1/assets/blue_screen.webm" type="video/webm" />
+
+                            <!-- mp4 file for safari, IE -->
+                            <source id="src2" src="../mmp2016-BonguiHortz-Übung1/assets/blue_screen.mp4" type="video/mp4" />
+
+                            <!-- Alternate content: just print a message, no video available -->
+                            No HTML5-Video support? Try a newer browser! (Opera11, IE9, Firefox4, Safari5)
+
+                        </video>
+                    </div>
+                    <div>
+                        <!-- canvas container for resulting image -->
+                        <canvas id="c1_2"></canvas>
+                        <canvas id="c2_2"></canvas>
+                        <canvas id="c3_2"></canvas>
+                    </div>
+                    <div id="button-container">
+                        <button id="b1_2" >Schwarz</button>
+                        <button id="b2_2" >Wolke</button>
+                        <button id="b3_2" >Bundestag</button>
+
+
+                    </div>
+
+                    <hr>
+
+                    <!-- camera button and script -->
+                    <hr>
+                    <a href="#" onclick="startCam2()">Start Camera</a>
+                    <script type="text/javascript" src="js/camera2.js"></script>
+                </div>
+            </div>
+        </section>
+
+
+
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/jquery.min_.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/TweenMax.min.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/ScrollToPlugin.min.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/bootstrap.min_.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-viewport-checker/1.8.7/jquery.viewportchecker.min.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/flexslider.min_.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/jwgSlider.min_.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/smooth-scroll.min_.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/placeholders.min_.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/twitterfetcher.min_.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/spectragram.min_.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/parallax.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/scripts.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/settings.js"></script>
+        <script src="../mmp2016-BonguiHortz-Übung1/js/libs/wow.min_.js"></script>
+        <script>
+                    $(document).ready(function () {
+                        new WOW().init();
+                        $(window).scroll(function () {
+                            if ($(this).scrollTop() > 100) {
+                                $('.scrollToTop').fadeIn();
+                                $('.start_square').fadeOut();
+                                $('.page_down').fadeOut();
+                            } else {
+                                $('.scrollToTop').fadeOut();
+                                $('.start_square').fadeIn();
+                                $('.page_down').fadeIn();
+                            }
+                        });
+                        $('.scrollToTop').click(function () {
+                            $('html, body').animate({scrollTop: 0}, 800);
+                            return false;
+                        });
+                        $('a.page-scroll').click(function () {
+                            var $anchor = $(this);
+                            $('html, body').animate({scrollTop: $($anchor.attr('href')).offset().top}, 800);
+                            return false;
+                        });
+                        $( "#c1_2" ).show();
+                        $( "#c2_2" ).hide();
+                        $( "#c3_2" ).hide();
+
+                            $("#b1_2").click(function() {
+                                $( "#c1_2" ).show();
+                                $( "#c2_2" ).hide();
+                                $( "#c3_2" ).hide();
+                            });
+                        $("#b2_2").click(function() {
+                            $( "#c1_2" ).hide();
+                            $( "#c2_2" ).show();
+                            $( "#c3_2" ).hide();
+                        });
+                        $("#b3_2").click(function() {
+                            $( "#c1_2" ).hide();
+                            $( "#c2_2" ).hide();
+                            $( "#c3_2" ).show();
+                        });
+
+
+                    });
+                    function collapseNavbar() {
+                        if ($(".navbar").offset().top > 50) {
+                            $(".navbar-fixed-top").addClass("top-nav-collapse");
+                        } else {
+                            $(".navbar-fixed-top").removeClass("top-nav-collapse");
+                        }
+                    }
+
+                    $(window).scroll(collapseNavbar);
+                    $(document).ready(collapseNavbar);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+h1{
+   color: #003399;
+}
+h4{
+   color: #333;
+}
+#c1
+{width: 320px; height: 320px; margin-left: 170px;}
+#video
+{width: 320px; height: 320px; margin-left: 120px;}
+#col-md-4
+{margin-left: 90px; }
+#b1_2
+{color: #003399}
+#b2_2
+{color: #003399}
+#b3_2
+{color: #003399}
+#button-container{
+    width: 285px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+#video2{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#c1_2{display: block;
+    margin-left: auto;
+    margin-right: auto;}
+#c2_2{display: block;
+    margin-left: auto;
+    margin-right: auto;}
+#c3_2{display: block;
+    margin-left: auto;
+    margin-right: auto;}
+
+#graphics > div:nth-child(1) > a:nth-child(4){
+    font-weight: bold;
+    font-size: 20px;
+}
+.nav > li:nth-child(2) > a:nth-child(1){
+    background-color: #003399;
+    color:white;
+}
+.nav > li:nth-child(3) > a:nth-child(1){
+    background-color: #003399;
+    color:white;
+}
+
+#websites > div:nth-child(1) > div:nth-child(2) > a:nth-child(6){
+    font-weight: bold;
+    font-size: 20px;
+    color: #337ab7;
+}
+
+.navbar > div:nth-child(1) > div:nth-child(1){background-color: #0000FF;
+color: white;
+padding: 15px;
+float: right;}
+
+.navbar > div:nth-child(1){
+    background-color: #0000FF;
+}
