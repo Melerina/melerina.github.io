@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>MMP-Video Aufgabe 2</title>
+    
+	
+	
+   
+    <style>
+        body
+        {
+            background: white;
+            color: #0000ff;
+			font-family: sans-serif;
+        }
+		h1 { font-size:1.7em; font-weight:normal; padding:0 0 0 8px; }
+    </style>
+    
+    
+	<script type="text/javascript" src="script/processor.js"></script>
+    
+</head>
+<body>
+	<h1>Bild-Filter Übung 2</h1>
+    <div>
+
+		
+        <video id="video" muted="true" width="320" height="320" autobuffer="true" controls="true" tabindex="0" onloadedmetadata="processor.doLoad()">
+
+			
+			<source src="../assets/TV-100s-2110.podm.h264.webm" type="video/webm" />
+
+			
+			<source src="../assets/TV-100s-2110.podm.h264.mp4" type="video/mp4" />
+
+			
+			No HTML5-Video support? Try a newer browser! (Opera11, IE9, Firefox4, Safari5)
+
+        </video>
+
+		
+        <canvas id="c1"></canvas>
+
+	</div>
+		
+	
+    <hr>
+	Bild-Filter:<select id="Filters"/>
+	  <option value="Blur">Blur</option>
+	  <option value="Gauss">Gauss</option>
+	  <option value="Median">Median</option>
+	  <option value="Prewitt">Prewitt</option>
+	  <option value="LoG">Laplace-of-Gaussian</option>
+	</select>
+	Filtermask:<select id="Matrix"/>
+	  <option value="3x3">3x3</option>
+	  <option value="7x7">7x7</option>
+	</select>  
+    <button type="button" onclick="processor.change_effect()">los!</button>
+	<script type="text/javascript" src="script/processor.js"></script>
+	
+	
+	
+    <hr>
+    <a href="#" onclick="startCam2()">Start Camera</a>
+    <script type="text/javascript" src="script/camera2.js"></script>
+	<div id="log">
+	</div>
+
+<br>
+<br>
+</body>
+</html>
