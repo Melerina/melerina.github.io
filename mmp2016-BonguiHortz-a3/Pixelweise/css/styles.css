@@ -1,0 +1,50 @@
+h1{
+   color: #003399;
+}
+h4{
+   color: #333;
+}
+
+#video
+{width: 320px; height: 320px; margin-left: 120px;}
+
+#button-container{
+    width: 285px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#Ueberschrift
+{
+    margin-top: 65px;
+}
+
+#graphics > div:nth-child(1) > a:nth-child(4){
+    font-weight: bold;
+    font-size: 20px;
+}
+.nav > li:nth-child(2) > a:nth-child(1){
+    background-color: #003399;
+    color:white;
+}
+.nav > li:nth-child(3) > a:nth-child(1){
+    background-color: #003399;
+    color:white;
+}
+
+#websites > div:nth-child(1) > div:nth-child(2) > a:nth-child(6){
+    font-weight: bold;
+    font-size: 20px;
+    color: #337ab7;
+}
+
+.navbar > div:nth-child(1) > div:nth-child(1){background-color: #0000FF;
+color: white;
+padding: 15px;
+float: right;}
+
+.navbar > div:nth-child(1){
+    background-color: #0000FF;
+}
